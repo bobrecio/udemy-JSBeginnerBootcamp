@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Match the cards!</h1><hr>
+    
     <div id='game-board'></div><hr>
     <div id='score'>
         <table id=scoreBoard>
@@ -18,7 +19,9 @@
         </table>
     </div>
     <br>
-    <input type="button" value="Restart" onClick="window.location.reload(false)">
+    <input type="button" value="New Game" onClick="window.location.reload(false)"><br>
+    <input type="button" value="Reset" onClick="confirm('Reset high score??') === true ? localStorage.clear() : '' ;window.location.reload(false)">
+    
     <script src='main.js'></script>
 </body>
 </html>
