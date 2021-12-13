@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px 0;
+    background: #6589F9;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+    margin: 5px;
+}
+
+.card,
+.back,
+.front {
+    height: 125px;
+    width: 125px;
+    border-radius: 2px;
+}
+
+.back,
+.front {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    z-index: 2;
+    background: #FAB942 url('./ac-leaf.png') no-repeat center center / contain;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #6589F9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.selected {
+    transform: rotateY(180deg);
+}
+
+.match .front {
+    background: #6589F9 !important;
+}
+
+#score {
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+#guesses, 
+#matches,
+#highScore{
+    font-weight: 600;
+}
+#scoreBoard{
+    background-color:silver;
+    width: 240px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+input[type="button"]{
+    width: 200px;
+    height: 35px;
+    font-size: 1em;
+    border-radius: 15px;
+    font-weight: 600;
+}

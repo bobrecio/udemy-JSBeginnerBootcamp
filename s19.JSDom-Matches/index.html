@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Memory Game</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Match the cards!</h1><hr>
+    <div id='game-board'></div><hr>
+    <div id='score'>
+        <table id=scoreBoard>
+            <tr><td><span id=matches>0 matched</span></td></tr>
+            <tr><td>in <span id=guesses>0</span> guesses</td></tr>       
+            <tr><td><span id=highScore>No high score</span></td></tr>
+        </table>
+    </div>
+    <br>
+    <input type="button" value="Restart" onClick="window.location.reload(false)">
+    <script src='main.js'></script>
+</body>
+</html>
