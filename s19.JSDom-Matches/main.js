@@ -3,7 +3,7 @@ var acCardsArray = [];
 var imgCol = null;
 var imgRow = null;
 
-var mkAcCardsArray = function(){
+var makeAcCardsArray = function(){
     for (i = 0; i < numberOfCards/2; i++){
         var thisCard = {};
         imgCol = Math.floor(Math.random() * 29);
@@ -13,12 +13,12 @@ var mkAcCardsArray = function(){
         var pxTop = (imgRow * 128) + imgRow + 3;
 
         thisCard.name = `${pxRight}|${pxTop}`;
-        thisCard.img = `url('ac.png') -${pxRight}px -${pxTop}px`;
+        thisCard.img = `url('./ac.png') -${pxRight}px -${pxTop}px`;
         //console.log(thisCard);
         acCardsArray.push(thisCard);
     }
 }
-mkAcCardsArray();
+makeAcCardsArray();
 
 // Duplicate cardsArray to create a match for each card
 var gameGrid = acCardsArray.concat(acCardsArray);//cardsArray.concat(cardsArray);
