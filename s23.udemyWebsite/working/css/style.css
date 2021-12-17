@@ -71,7 +71,7 @@ footer img   {
 display: block;
 border-radius: 5px;
 width: 80px;
-margin: 0 auto 10px;
+margin: 0 auto 10px; /* top: 0, left&right: auto (centered), bottom:10px */
 }
 /* MAIN CONTENT */
 /* HERO SECTION */
@@ -143,6 +143,7 @@ display: inline-block;
 width: 24%;
 padding: 20px 30px;
 line-height: 1;
+vertical-align: top;
 }
 .service-box img {
 width: 80px;
@@ -161,7 +162,8 @@ letter-spacing: 2px;
 .testimonial-box {
 display: inline-block;
 width: 27%;
-padding: 20px 30px;   
+padding: 20px 30px; 
+vertical-align: top;  
 }
 .testimonial-content {
 background: #ECF0F1;
@@ -180,7 +182,7 @@ font-size: 18px;
 margin: 0;
 padding-top: 15px;
 }
-testimonial-author span {
+.testimonial-author span {
 color: #999;
 font-size:14px;
 }
