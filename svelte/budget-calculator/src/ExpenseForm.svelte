@@ -2,8 +2,15 @@
   import Title from "./Title.svelte";
   let name = "";
   let amount = null;
+  export let addExpense;
   //$: console.log({ name, amount });
   $: isEmpty = !name || !amount;
+
+  function handleSubmit(){
+    addExpense({name,amount});
+    name="";
+    amount=null;
+  }
 </script>
 
 <!--
@@ -12,7 +19,7 @@
 -->
 <section class="form">
   <Title title="add expense" />
-  <form class="expense-form">
+  <form class="expense-form" on:submit|preventDefault={handleSubmit}>
     <div class="form-control">
       <label for="name">name</label>
       <input type="text" id="name" bind:value={name} />
