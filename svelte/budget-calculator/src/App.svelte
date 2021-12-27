@@ -1,4 +1,6 @@
 <script>
+  //import Github from './Github.svelte';
+  import GithubAwit from './GithubAwait.svelte';
   // components
   import Navbar from "./Navbar.svelte";
   import ExpensesList from "./ExpensesList.svelte";
@@ -6,6 +8,7 @@
   import Totals from "./Totals.svelte";
   import ExpenseForm from "./ExpenseForm.svelte";
   import Modal from "./Modal.svelte";
+import GithubAwait from './GithubAwait.svelte';
   // data
   //import expensesData from "./expenses.js"; // for testing/dev
   // variables
@@ -86,6 +89,8 @@
 
 <Navbar {showForm} />
 <main class="content">
+  <!-- <Github /> -->
+  <!-- <GithubAwait /> -->
   {#if isFormOpen}
     <Modal>
       <ExpenseForm

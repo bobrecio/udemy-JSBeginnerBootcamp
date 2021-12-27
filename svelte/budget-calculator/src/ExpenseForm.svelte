@@ -19,6 +19,7 @@
   export let isEditing;
   export let editExpense;
   export let hideForm;
+  let formTitle = isEditing ? "editing..." : "adding...";
   //$: console.log({ name, amount });
   $: isEmpty = !name || !amount;
 
@@ -40,7 +41,7 @@
 <p>{amount}</p>
 -->
 <section class="form">
-  <Title title="add expense" />
+  <Title title={formTitle} />
   <form class="expense-form" on:submit|preventDefault={handleSubmit}>
     <div class="form-control">
       <label for="name">name</label>
