@@ -1,10 +1,24 @@
 <script>
+  // import {onMount, onDestroy, beforeUpdate, afterUpdate} from 'svelte';
+  // onMount(() => {
+  //   console.log("onMount - showForm()");
+  // })
+  // beforeUpdate(() => {
+  //   console.count("beforeUpdate");
+  // })
+  // afterUpdate(() => {
+  //   console.count("afterUpdate");
+  // })
+  // onDestroy(() => {
+  //   console.log("onDestroy - hideForm()");
+  // })
   import Title from "./Title.svelte";
   export let name = "";
   export let amount = null;
   export let addExpense;
   export let isEditing;
   export let editExpense;
+  export let hideForm;
   //$: console.log({ name, amount });
   $: isEmpty = !name || !amount;
 
@@ -17,6 +31,7 @@
     }
     name="";
     amount=null;
+    hideForm();
   }
 </script>
 
@@ -41,7 +56,7 @@
     <button type="submit" class="btn btn-block" class:disabled={isEmpty} disabled={isEmpty}>
       {#if isEditing}edit expense {:else}add expense{/if}
     </button>
-    <button type="button" class="close-btn">
+    <button type="button" class="close-btn" on:click={hideForm}>
       <i class="fas fa-times" />
       close
     </button>
