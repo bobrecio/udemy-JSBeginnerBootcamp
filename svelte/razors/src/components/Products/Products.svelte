@@ -1,7 +1,8 @@
 <script>
-  export let title = "section title";
+  export let title = "";
   import products from "../../stores/defaultProduct";
   import Product from "./Product.svelte";
+  import Loading from "../Loading.svelte";
   // $-prefix automatically handles subscribe/unsubscripe at mount/destroy
   console.log($products);
 </script>
@@ -12,6 +13,8 @@
     <!-- the $ always gives the latest version of the store -->
     {#each $products as product (product.id)}
       <Product {product} />
+      {:else}
+        <Loading />
     {/each}
   </div>
 </section>
