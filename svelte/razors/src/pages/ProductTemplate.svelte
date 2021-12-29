@@ -9,7 +9,7 @@
   $: product = $products.find(item => item.id == parseInt(id));
 </script>
 <svelte:head>
-    <title>Razors - {product.title}(${product.price})</title>
+    <title>Razors: {product.title}(${product.price})</title>
 </svelte:head>
 {#if !product}
     <Loading />
